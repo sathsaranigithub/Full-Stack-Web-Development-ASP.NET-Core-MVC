@@ -1,0 +1,4 @@
+// its create table that we define Application context
+add-migration Init 
+
+Update-Database

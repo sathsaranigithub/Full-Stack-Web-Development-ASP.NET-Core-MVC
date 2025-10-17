@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Resturent")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+db32e64d0b4f05b28b279c6676c1396a9015caa0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Resturent")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Resturent")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
