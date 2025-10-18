@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Ingredient>  
+<!-- This line defines the model type passed to the view.
+                                     'IEnumerable<Ingredient>' means the view will receive
+                                     a list (collection) of Ingredient objects from the controller. -->
+
+@{
+    // Sets the title for the page. This can be displayed in the browser tab or layout page.
+    ViewBag.Title = "List of Restaurant Ingredients";
+}
+
+<h1>Ingredients</h1>
+
+<!-- This is a link to navigate to the Create page (for adding a new ingredient). -->
+<a asp-action="Create">Create New Ingredient</a>
+
+<!-- Table to display the list of ingredients -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <!-- Display the column header for the Name property.
+                     'DisplayNameFor' automatically gets the display name from the model property. -->
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th> <!-- Empty header column for the action buttons (Details/Edit/Delete). -->
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loop through each ingredient in the Model (list of ingredients). -->
+        @foreach (Ingredient i in Model)
+        {
+            <tr>
+                <td>
+                    <!-- Display the ingredient name.
+                         'DisplayFor' automatically formats the property for display. -->
+                    @Html.DisplayFor(modelItem => i.Name)
+                </td>
+                <td>
+                    <!-- Action links for each ingredient record. 
+                         'asp-action' specifies the controller action to call.
+                         'asp-route-id' passes the ingredient's ID as a route parameter. -->
+                    <a asp-action="Details" asp-route-id="@i.IngredientId">Details</a>
+                    <a asp-action="Edit" asp-route-id="@i.IngredientId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@i.IngredientId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
